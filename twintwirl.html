@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #057e66;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #redirect {
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="redirect" onclick="redirectToURL()">Loading Twin Twirl...</div>
+
+    <script>
+        function redirectToURL() {
+            // Replace 'https://example.com' with your desired URL.
+            window.location.href = 'https://epiction.itch.io/twin-twirl';
+        }
+
+        // Automatically redirect after 5 seconds (you can adjust the delay).
+        setTimeout(redirectToURL, 2500);
+    </script>
+</body>
+</html>
