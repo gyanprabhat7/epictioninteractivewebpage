@@ -175,7 +175,29 @@ document.addEventListener("DOMContentLoaded", function() {
             $(this).addClass('active-area');
         });
 
-   
+        // Sidebar Menu Active
+        var sidebarBtn = $('.sidebar-wrapper .sidebar-close');
+        var changeBtn = $('.sidebar-wrapper .sidebar-close i');
+        var sidebarWrapper = $('.sidebar-wrapper');
+        $(sidebarBtn).on('click', function() {
+            $('.sidebar-wrapper').toggleClass('sidebar-active');
+            if (sidebarWrapper.hasClass("sidebar-active")) {
+                changeBtn.html("close");
+            } else {
+                changeBtn.html("menu_open");
+            }
+        });
+
+        // Sidebar menu mobile active
+        $('.mobile-menu').on('click', function() {
+            $('.sidebar-wrapper').toggleClass('active-mobile sidebar-active');
+            $('.mobile-menu i').toggleClass('menu-active');
+            if ($('.mobile-menu i').hasClass("menu-active")) {
+                $('.mobile-menu i').html("close");
+            } else {
+                $('.mobile-menu i').html("menu_open");
+            }
+        });
 
         // Header Active
         $('.single-item .cmn-head').on('click', function() {
